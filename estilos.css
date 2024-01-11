@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.site-header {
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.header-content img {
+    width: 90px;
+    height: auto;
+}
+
+.upper-strip {
+    background-color: rgba(181, 179, 228, 0.5); /* Color de la franja superior con transparencia */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegúrate de que la franja tenga el 100% de ancho */
+    height: 80px; /* Ajusta la altura de la franja superior según tus necesidades */
+    z-index: 1; /* Z-index inferior para la franja superior */
+}
+
+.header-content {
+    position: relative;
+    z-index: 2; /* Z-index medio para el contenido (logo, menú, botón) */
+}
+
+.overlay.lower-triangle {
+    background: linear-gradient(to bottom right, transparent 95%, rgba(181, 179, 228, 0.5) 95%);
+    z-index: 1;
+}
+
+.overlay.lower-triangle::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Ajusta la altura del triángulo según tus necesidades */
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%); /* Crea un triángulo invertido */
+    background-color: rgba(181, 179, 228, 0.5); /* Color del triángulo con transparencia */
+}
+
+.lower-strip {
+    background-color: rgba(181, 179, 228, 0.5); /* Color de la franja inferior con transparencia */
+    z-index: 1; /* Z-index inferior para la franja inferior */
+    position: relative;
+    height: 20px; /* Ajusta la altura de la franja inferior según tus necesidades */
+    width: 100%; /* Asegúrate de que la franja tenga el 100% de ancho */
+}
+
+.image-carousel {
+    position: relative;
+    flex: 1;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Añade esto para que la imagen cubra completamente el contenedor */
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-image.active {
+    display: block;
+    transform: scale(1.2); /* Ajusta el valor para cambiar el zoom */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.reserve-btn {
+    background-color: #3498db; /* Cambia este color al que desees */
+    color: #fff; /* Color del texto del botón */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background-color: #cacd21; /* Cambia el color del fondo al pasar el ratón */
+}
+.tit2{
+    position: absolute;
+    top: 280px; /* Ajusta la distancia desde la parte inferior según tus necesidades */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 60px; 
+    z-index: 2; 
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+    width: fit-content; /* Ajuste para que el ancho del contenedor sea igual al contenido */
+    margin: 0 auto; /* Centra el contenedor */
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(1); /* Tamaño original */
+    }
+    100% {
+        transform: scale(1.2); /* Tamaño final (puedes ajustar según tus necesidades) */
+    }
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease-in-out;
+    animation: zoomIn 10s infinite alternate; /* Ajusta la duración y la iteración según tus necesidades */
+}
+
+.carousel-image.active {
+    display: block;
+    transform: scale(1.2);
+}
+.un{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px; /* Ajusta el espaciado según tus necesidades */
+    position: relative;
+   z-index: 2; /* Ajusta el valor según sea necesario */
+    
+}
+.uno{
+    flex: 1;
+}
+.uno img{
+  
+    width: 600px;
+    height: auto;
+    display: block; /* Añade esto para corregir un espacio no deseado por las imágenes inline */
+}
+.text{
+    flex: 1;
+    margin-left: -210px; /* Ajusta la posición horizontal  */
+    
+
+}
+.text-box {
+    background-color: #0D384B; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    padding: 20px; /* Ajusta el espaciado interno  */
+    border-radius: 10px; /* Ajusta el radio de borde para esquinas redondeadas */
+    max-width: 500px; /* Ajusta el ancho máximo  */
+    width: 100%; /* Garantiza que el cuadro se ajuste al ancho del contenedor */
+   
+}
+
+.text-box h2 {
+    font-size: 24px; /*  tamaño de la fuente  */
+    margin-bottom: 10px; /* margen inferior */
+}
+.serv{
+    text-align: center;
+ font-size: 40px;
+ font-family:Arial, Helvetica, sans-serif ;
+ color:  #6a4b1d;
+}
+.inter {
+    text-align: center; /* Centra el texto */
+    background-color: #0D384B; 
+    color: #fff; /* Color del texto blanco */
+    padding: 20px; /* Ajusta el espaciado interno  */
+    box-sizing: border-box; /* Incluye el padding y el border en el tamaño total */
+    display: flex; /* Cambia a un contenedor flexible */
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+.inter h2 {
+    font-size: 24px; /* Tamaño de la fuente para el h2 */
+    margin-bottom: 10px; /* Margen inferior para separar del h1 */
+}
+.inter h1 {
+    font-size: 36px; /* Tamaño de la fuente para el h1 */
+    margin-bottom: 20px; /* Margen inferior para separar del botón */
+}
+
+.reserve {
+    background-color: #ffd700; /* Color de fondo amarillo para el botón, cambia el código de color según tus preferencias */
+    color: #000; /* Color del texto negro */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserve:hover {
+    background-color: #cacd21; /* Cambia el color del fondo al pasar el ratón */
+}
+
+.servicios-section {
+
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no caben en la misma línea */
+    justify-content: space-around;
+    padding: 50px; 
+}
+.servicios-section h2{
+    color: #080a41;
+    font-size: 40px;
+}
+.servicios-section p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+
+.servicio {
+    background-color: #ebe0d0;
+    text-align: center;
+    border: 2px solid #3498db; /* Borde azul */
+    border-radius: 20px; /* Esquinas redondeadas */
+    padding: 20px; /* espaciado interno  */
+
+    margin: 0 10px 20px; /*  margen entre los servicios  */
+    flex: 1; /* Ocupa todo el ancho disponible */
+}
+
+.servicio img {
+    width: 100%; /* La imagen ocupa el 100% del contenedor */
+    border-radius: 5px; /* Esquinas redondeadas para la imagen */
+    margin-bottom: 10px; /* Espaciado inferior entre la imagen y el texto */
+
+}
+.cele {
+    padding: 50px;
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: flex-start; /* Alinea el contenido al principio (izquierda) */
+}
+
+.cele .image { 
+
+    width: 500px;
+    margin-right: 20px; /* margen entre la imagen y el texto */
+   
+}
+
+.cele img {
+ border-radius: 7%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.cele .texto-cel {
+    flex: 1; /* Hace que el texto ocupe todo el espacio disponible */
+    font-size: 25px;
+}
+.cel2{
+
+    position: relative;
+}
+.cel2 img{
+
+    width: 10%;
+}
+.texto-cel2{
+
+    position: absolute;
+    top: 50%; /*  posición vertical  */
+    left: 30%; /*posición horizontal  */
+    transform: translate(-50%, -50%);
+}
+.texto-cel{
+    padding: 20px;
+}
+.galeria h1{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif ;
+    color: #6a4b1d;
+    font-size: 40px;
+}
+
+.gallery {
+    display: flex; /*  horizontal */
+    overflow-x: auto; /* Permite desplazar la galería si se desborda */
+    margin: 20px 20px; /*  margen  */
+}
+
+.gallery img {
+    width: 270px; /* Ajusta el ancho de las imágenes según sea necesario */
+    height: auto; 
+    margin-right: 20px; /* Ajusta el margen derecho entre las imágenes */
+    border-radius: 15px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Agrega una pequeña sombra a las imágenes */
+    transition: transform 0.3s ease-in-out; /* Añade una transición suave a la propiedad de transformación */
+}
+.gallery img:hover {
+    transform: scale(1.1); /* Ajusta el valor para cambiar el zoom al pasar el ratón */
+}
+
+.gallery img:last-child {
+    margin-right: 0; /* Elimina el margen derecho de la última imagen */
+}
+footer {
+    background-color: #0D384B;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Ajuste para distribuir los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+}
+
+.imgfoot img {
+    width: 150px;
+    height: auto;
+}
+
+.dat1 {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+}
+
+footer p {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.redes {
+    display: flex;
+}
+
+.redes a {
+    margin-right: 10px; /* Ajusta el margen entre los iconos según tus necesidades */
+}
+
+.redes img {
+    width: 40px; /* Ajusta el tamaño de los iconos según tus necesidades */
+    height: auto;
+}
